@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+		<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title></title>
+    <script src="js/consts.js"></script>
+    <script type="text/javascript" charset="utf-8" src="http://g.alicdn.com/sd/nch5/index.js?t=2015052012"></script>
+    <script type="text/javascript" src="js/util.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/regist.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <meta property="og:image" content="http://fgnass.github.com/spin.js/assets/preview.jpg?v=1" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.7.2/animate.min.css" />
+    <link href="css/swiper.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        #box{height: 140px; border: solid 1px; overflow: hidden;}
+        ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color:#999 !important;
+        }
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+       color:#999 !important;
+       opacity: 1;
+        }
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */
+       color:#999 !important;
+       opacity:  1;
+        }
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+       color:   #999 !important;
+        }
+        ::-ms-input-placeholder { /* Microsoft Edge */
+       color:   #999 !important;
+        }
+        ._nc{
+            width: 108%;
+            margin-left: -4%;
+        }
+        @media screen and (min-width:601px) and (max-width:748px) {
+            ._nc{
+                width: 104%;
+                margin-left: -2%;
+            }
+        }
+        @media screen and (min-width:748px){
+            ._nc{
+                width: 104%;
+                margin-left: -2%;
+            }
+        }
+        ._nc .icon-slide-arrow:before {
+            content: "";
+        }
+        ._nc .stage1 .track div, ._nc .stage1 .label{
+            border-radius: 50px;
+        }
+        ._nc .stage1 .slider{
+            border-radius: 50px;
+        }
+        ._nc .stage1 .button{
+            border-radius: 50px;
+        }
+        ._nc .icon {
+            /* width: 32px;
+            height: 32px;
+            background-image: url("http://g.alicdn.com/sd/nch5/icons.png?v=2"); */
+        }
+        ._nc .icon-ok:before {
+            content: "";
+            /* color: #fff; */
+        }
+        ._nc .stage1 .icon.yes {
+            background-position: -64px 0;
+        }
+        ._nc .stage1 .button {
+            background-color: #eef3e9;
+        }
+        ._nc .stage1 .slider{
+            background-color: #e7e7e7;
+        }
+        ._nc .stage1 .button {
+    background-color: #78c430;
+}
+    </style>
+</head>
+
+<body>
+	<div id="bgColor">
+    <div class="banner por">
+        <div class="top">
+        <img src="images/banner.png">
+        </div>
+    </div>
+    <div class="container">
+    <div class="main">
+        <div class="middle" >
+            <div class="telNumber div">
+                <dl class="d-webkit">
+                    <dt></dt>
+                    <dd class="box-flex">
+                        <input class="telTxt" type="text" placeholder="请输入手机号" maxlength="11" validate="n" minLen="11">
+                    </dd>
+                </dl>
+            </div>
+            <div class="dl">
+                <div id="__nc" style="width:100%;height:45px; margin-bottom: 30px;">
+                    <div id="nc"></div>
+                </div>
+            </div>
+            <div class="code div d-webkit">
+                <dl class="d-webkit box-flex">
+                    <dt></dt>
+                    <dd class="box-flex">
+                        <span class="putCode">
+                            <input class="codeTxt" type="text" placeholder="请输入验证码" maxlength="8" validate="n" minLen="2">
+                        </span>
+                    </dd>
+                    <dd> <button id="hq" class="getCode getCode2">获取验证码</button></dd>
+                </dl>
+            </div>
+            <div class="application">
+                <div id="zc" class='applicationBtn'>
+                    <img src="./images/btnImg.png" />
+                </div>
+                <div class="agreen">
+                    <input type="checkbox" id="agree" checked>
+                    <label for="agree">
+                        <span class="reader" style="color: #cac1ff">我已阅读并同意</span>
+                    </label>
+                    <span class="protocol">
+                        <a id="agreement">555</a>
+                        <!-- <a id="yszc">《隐私政策》</a> -->
+                    </span>
+                </div>
+            </div> 
+            <!-- <div > -->
+                <!-- <input type="checkbox" id="agree" checked>
+                <label for="agree">
+                    <span class="reader" style="color: #fff">我已阅读并同意</span>
+                </label>
+                <span class="protocol">
+                    <a id="agreement">《用户服务协议》</a>
+                </span> -->
+            <!-- </div> -->
+        </div>
+    </div>
+    <div class="bah">123</div>
+      <img style="width: 92%;margin-left: 4%;margin-bottom: 30px" src="images/bottom.png" class="bg" alt=""/>
+    <div class="success hide">
+        <div class="pof">
+            <img src="images/alert_bg.png" class="bg" alt="">
+            <img src="images/ios_guide.png" alt="" class="iosGuide">
+        </div>
+        <div id="downloadBtn"> <a id="iosDownload" style="color: #fff;">立即下载</a></div>
+        <!-- <ul>
+            <li>
+                <a id="iosDownload" class="fr" >
+                    <img src="images/iphone.png" class="iosImages">
+                </a>
+            </li>
+            <li>
+                <a id="androidDownload" class="fl" >
+                    <img src="images/android.png" class="andriodImages">
+                </a>
+            </li>
+        </ul> -->
+    </div>
+	</div>  
+    <div class="layer hide"></div>
+    <div class="layer2 hide"></div> 
+    <script language="javascript" type="text/javascript">
+        function GetQueryString(name) {
+        var c = decodeURIComponent(location.search);
+    
+        var theRequest = new Object();
+        if (c.indexOf("?") != -1) {
+            var str = c.substr(1);
+            strs = str.split("&");
+            for ( var i = 0; i < strs.length; i++) {
+                theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+    }
+    var Request = undefined;
+        Request = GetQueryString();
+        var r = Request["channel"];
+            document.oncontextmenu = function () { return false; };
+           //禁用开发者工具F12
+           document.onkeydown = function () {
+           if (window.event && window.event.keyCode == 123) {
+           event.keyCode = 0;
+           event.returnValue = false;
+           return false;
+           }
+           };
+     
+      
+        $.ajax({
+           type: "post",
+           dataType: "json",
+           url: 'http://localhost:8006' + "uvCount",
+           contentType: 'application/json',
+           data: JSON.stringify({
+               cmd: 'uvCount',
+               token: '',
+               version: '1.0',
+               params: {
+                   "channel": r
+               }
+           }),
+           success: function (json) {
+               var resultNote = json.resultNote;
+               if(resultNote == "当前渠道不存在！") {
+                   var a = document.getElementById("bgColor");
+                       a.style.display = "none";
+               }
+           }
+       })
+       function checkTxt1(txtObj) {
+       tel = false;
+       // 文本框是否出现错误
+       isHasErr1 = false;
+       var textStr = $(txtObj).val();
+       var getErrMsg = function () {
+           if ($.trim(textStr) == "") {
+               tel = true;
+               isHasErr1 = true;
+               popup("手机号不正确")
+           } else {
+               tel = false;
+           }
+           if ($.trim(textStr).length < parseInt($(txtObj).attr("minLen"))) {
+               isHasErr1 = true;
+               tel = true;
+               popup("手机号不正确")
+           } else {
+               tel = false;
+           }
+           if (!util.string.validate(textStr, $(txtObj).attr("validate"))) {
+               isHasErr1 = true;
+               tel = true;
+               popup("手机号不正确")
+           } else {
+               tel = false;
+           }
+       }
+       if (tel == false) {}
+       var errMsg = getErrMsg();
+       // 如果出现错误显示错误提示动画,否则隐藏错误提示
+       return isHasErr1 ? showErrTip(txtObj, errMsg) : hideErrTip(txtObj);
+    }
+    
+    function checkTxt2(txtObj) {
+       // 文本框是否出现错误
+       isHasErr2 = false;
+       var textStr = $(txtObj).val();
+       var reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,20}$/;
+       var getErrMsg = function () {
+           if ($.trim(textStr) == "") {
+               isHasErr2 = true;
+               popup("请输8-20位的数字和字母")
+           }
+           if ($.trim(textStr).length < parseInt($(txtObj).attr("minLen"))) {
+               isHasErr2 = true;
+               popup("请输8-20位的数字和字母")
+           }
+           if (!reg.test($.trim(textStr))) {
+               isHasErr2 = true;
+               popup("请输8-20位的数字和字母")
+           }
+       }
+       var errMsg = getErrMsg();
+       // 如果出现错误显示错误提示动画,否则隐藏错误提示
+       return isHasErr2 ? showErrTip(txtObj, errMsg) : hideErrTip(txtObj);
+    }
+    
+    function checkTxt3(txtObj) {
+       // 文本框是否出现错误
+       isHasErr3 = false;
+       var textStr = $(txtObj).val();
+       var getErrMsg = function () {
+           if ($.trim(textStr) == "") {
+               isHasErr3 = true;
+               popup("请输验证码")
+           }
+           if ($.trim(textStr).length < parseInt($(txtObj).attr("minLen"))) {
+               isHasErr3 = true;
+               popup("请输验证码")
+           }
+           if (!util.string.validate(textStr, $(txtObj).attr("validate"))) {
+               isHasErr3 = true;
+               popup("请输验证码")
+           }
+       }
+       var errMsg = getErrMsg();
+       // 如果出现错误显示错误提示动画,否则隐藏错误提示
+       return isHasErr3 ? showErrTip(txtObj, errMsg) : hideErrTip(txtObj);
+    
+    }
+       function checkTxt4() {
+       if (!$('#agree').is(':checked')) {
+           isHasErr4 = true
+           popup("协议未同意")
+       } else {
+           isHasErr4 = false
+       }
+    }
+    
+        var a = document.getElementById('hq')
+        var zc = document.getElementById('zc')
+        var tel = $('.telTxt').val();
+        var code = ''
+        zc.onclick=function () {
+          if(!code){
+           popup('请向右滑动完成验证')
+        }else{
+        }
+        }
+        
+        a.style.display="none"
+           var nc_token = ["FFFF0N0000000000903A", (new Date()).getTime(), Math.random()].join(':');
+           if(!tel){
+               // popup('请输入手机号')
+           }
+           var nc=NoCaptcha.init({
+           renderTo: '#nc',
+           // appkey: 'FFFF0N0000000000903A', 
+           appkey:'FFFF0N0000000000903A',
+           scene: 'nc_register_h5',
+           token: nc_token,
+           trans: {"key1": "code200"},
+           elementID: ["usernameID"],
+           is_Opt: 0,
+           language: "cn",
+           timeout: 10000,
+           retryTimes: 5,
+           errorTimes: 5,
+           inline:false,
+           apimap: {
+               // 'analyze': '//a.com/nocaptcha/analyze.jsonp',
+               // 'uab_Url': '//aeu.alicdn.com/js/uac/909.js',
+           },
+           bannerHidden:false,
+           initHidden:false,
+           callback: function (data) {
+            var Request = undefined;
+        Request = GetQueryString();
+        var city = Request["channel"];
+            //    var city = window.location.search.substring(window.location.search.indexOf("?") + 1, window.location.search.length);
+               // window.console && console.log(nc_token)
+               // window.console && console.log(data.csessionid)
+               // window.console && console.log(data.sig)
+               var code = data.code;
+               // var tel = $('.telTxt').val();
+               var telNumbers = $(".telTxt").val();
+               // if(!tel){
+               //     popup('输入手机号')
+               // }
+               if(code == 0){
+                   var telNumbers = $(".telTxt").val();
+                   // var tel = $('.telTxt').val();
+                   a.style.display="block"
+                   a.onclick =function(){  
+                       var abc = $(".telTxt").val();
+                       if(!abc){
+                   popup('请输入手机号')
+                   return;
+               }
+                       $.ajax({
+               type: "POST",
+               headers:{"Content-Type":"application/json;charset=UTF-8","Authorization":"token b18ef4d05d7f4ebe9cdac94b3b82336d"},
+               url: 'http://localhost:8006' + "sendSms",
+               dataType: "json",
+               contentType: 'application/json',
+               xhrFields: {
+                   withCredentials: true
+               },
+               data: JSON.stringify({
+                   cmd: 'sendSms',
+                   token: '',
+                   version: '1.0',
+                   params: {
+                       "mobile": abc,
+                       "channel": city,
+                       "type": "register",
+                       "sessionId":data.csessionid,
+                       "sig":data.sig,
+                       "token":nc_token,
+                       "scene":"nc_register_h5"
+                   }
+               }),
+               success: function (json) {
+                   if(json.resultNote == "用户已注册，请下载APP登录！") {
+                       download();
+                   }
+                   if (json.result == 1 ) {
+                       popup(json.resultNote);
+                       countdown = 0;
+       
+                   }
+               }
+           });
+           
+           reduce();
+    
+           function reduce() {
+               if (countdown == 0) {
+                   // $(".getCode").attr("disabled", false);
+                   $(".getCode").text("重新获取(0)");
+                   $("#hq").attr("disabled", true);
+                   var cc = document.getElementById('hq')
+                //    cc.style.background="#ccc"
+                   cc.style.color="#ccc"
+                   // $(".getCode").disabled=true;
+                   countdown = 60;
+                   checkTxt1(".telTxt");
+                   return;
+               } else {
+                   $(".getCode").text("重新发送(" + countdown + ")");
+                   countdown--;
+               }
+               setTimeout(function () {
+                   reduce();
+               }, 1000);
+           }
+           
+       }  
+                   
+               }
+             //注册申请
+             if(code != 0){
+               popup('完成验证')
+           }
+       else{
+           zc.onclick=function () {
+           checkTxt4();
+           checkTxt1(".telTxt");
+           // checkTxt2(".passwordTxt");
+           checkTxt3(".codeTxt");
+    
+    
+           if (isHasErr1 == false && isHasErr2 == false && isHasErr3 == false && isHasErr4 == false) {
+               // var isStudent = $("input:radio[name=sex]:checked").attr("value");
+               var telNumber = $(".telTxt").val();
+               // var password = $(".passwordTxt").val();
+               var code = $(".codeTxt").val();
+    
+               $.ajax({
+                   type: "Post",
+                   url: 'http://localhost:8006' + "register",
+                   dataType: "json",
+                   contentType: 'application/json',
+                   data: JSON.stringify({
+                       cmd: 'register',
+                       token: '',
+                       version: '1.0',
+                       params: {
+                           "mobile": telNumber,
+                           "validCode": code,
+                           "channel": r
+                       }
+                   }),
+                   success: function (json) {
+    
+                       var result = eval(json);
+                       if (json.result == 1) {
+                           popup(json.resultNote)
+                           download()
+                       }
+                       if (json.result == 0) {
+                           // popup2("", json.resultNote, "知道了", "立即下载");
+                           $(".telTxt").val("");
+                           $(".passwordTxt").val("");
+                           $(".codeTxt").val("");
+                           download()
+                       }
+    
+                   }
+                   
+               })
+           } else {
+               return;
+           }
+    
+       }
+       }
+              
+        
+           },
+           error: function (s) {
+           }
+       });
+       NoCaptcha.setEnabled(true);
+       nc.reset();//请务必确保这里调用一次reset()方法
+    
+       NoCaptcha.upLang('cn', {
+           'LOADING':"加载中...",//加载
+           'SLIDER_LABEL': "请向右滑动完成验证",//等待滑动
+           'CHECK_Y':"验证通过",//通过
+           'ERROR_TITLE':"非常抱歉，这出错了...",//拦截
+           'CHECK_N':"验证未通过", //准备唤醒二次验证
+           'OVERLAY_INFORM':"经检测你当前操作环境存在风险，请输入验证码",//二次验证
+           'TIPS_TITLE':"验证码错误，请重新输入"//验证码输错时的提示
+       });
+    
+                   window.onload=function(){ 
+                       var agreement = document.getElementById('agreement');
+                       agreement.setAttribute('href', 'http://localhost:8006'+'/h5/shhAgree.html');
+           document.title = appName + '';
+           document.getElementById('appName').innerHTML = appName;
+                   }
+    
+                 
+           document.getElementById('iosDownload').setAttribute('href', iosAddress);
+    
+    
+       </script> 
+</body>
+
+</html>
